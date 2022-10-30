@@ -46,7 +46,7 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 
 ### Create NFT marketplace
 
-### Allow minting functionality on mobile devices
+### Completed - Allow minting functionality on mobile devices
 
 ## Q2 2023
 
@@ -74,9 +74,8 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 
 # Create config-overrides.js file and add this:
 
-const webpack = require('webpack');
-module.exports = function override(config, env) {
-
+  const webpack = require('webpack');
+    module.exports = function override(config, env) {
     config.resolve.fallback = {
         url: require.resolve('url'),
         util: require.resolve('util'),
@@ -96,7 +95,7 @@ module.exports = function override(config, env) {
     );
 
     return config;
-}
+  }
 
 Install all the packages from config-overrides.js.
 ### `npm install buffer`
@@ -146,20 +145,20 @@ In package.json, replace the scripts:
 ## WRITE SMART-CONTRACT
 
 modify migrations/1_deploy_contracts.js like so:
-const Bulletproof = artifacts.require("Bulletproof");
+`const Bulletproof = artifacts.require("Bulletproof");`
 
-module.exports = function (deployer) {
-  deployer.deploy(Bulletproof);
-};
+  module.exports = function (deployer) {
+    deployer.deploy(Bulletproof);
+  };
 
 uncomment the development network in your truffle-config.js
 and modify the port number to 7545 to match
-development: {
-  host: "127.0.0.1",     // Localhost (default: none)
-  port: 7545,            // Standard Ethereum port (default: none)
-  //port: 8545,            // ganache-cli default port
-  network_id: "*",       // Any network (default: none)
-}
+  development: {
+    host: "127.0.0.1",     // Localhost (default: none)
+    port: 7545,            // Standard Ethereum port (default: none)
+    //port: 8545,            // ganache-cli default port
+    network_id: "*",       // Any network (default: none)
+  }
 
 ### Start ganache gui
 Open ganache gui or type
@@ -186,12 +185,12 @@ MNEMONIC="YOUR SECRET KEY"
 INFURA_API_KEY="YOUR INFURA_API_KEY"
 
 ### At the top of truffle-config.js, add this code to populate from .env
-require('dotenv').config();
-const mnemonic = process.env["MNEMONIC"];
-const metamask_mnemonic = process.env["METAMASK_MNENONIC"];
-const infuraApiKey = process.env["INFURA_API_KEY"];
+  require('dotenv').config();
+  const mnemonic = process.env["MNEMONIC"];
+  const metamask_mnemonic = process.env["METAMASK_MNENONIC"];
+  const infuraApiKey = process.env["INFURA_API_KEY"];
 
-const HDWalletProvider = require('@truffle/hdwallet-provider');
+  const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 ## Deploy contracts to testnet
 ### `truffle migrate --network goerli`
@@ -202,7 +201,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 ### `truffle console --network ropsten`
 
 #### const contract = await Bulletproof.deployed()
-#### await contract.mintNFT("0xFFc1E591B61F9ecBb9f8e9C421307Dec2f07970b", "ipfs://bafybeiffapvkruv2vwtomswqzxiaxdgm2dflet2cxmh6t4ixrgaezumbw4")
+#### await contract.mintNFT(OWNER_WALLET_ADDRESS, BASE_IPFS_URL)
 
 ## Test using Truffle Dashboard
 ### `truffle dashboard`
