@@ -73,7 +73,7 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 ### `npm i react-app-rewired`
 
 # Create config-overrides.js file and add this:
-
+```js
   const webpack = require('webpack');
     module.exports = function override(config, env) {
     config.resolve.fallback = {
@@ -96,6 +96,7 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 
     return config;
   }
+```
 
 Install all the packages from config-overrides.js.
 ### `npm install buffer`
@@ -109,14 +110,14 @@ Install all the packages from config-overrides.js.
 ### `npm install crypto-browserify`
 
 In package.json, replace the scripts:
-
+```js
 "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
-
+```
 # https setup for ganache
 ### `npm install -g ganache-http-proxy`
 ### `ganache-http-proxy`
@@ -146,20 +147,21 @@ In package.json, replace the scripts:
 
 modify migrations/1_deploy_contracts.js like so:
 `const Bulletproof = artifacts.require("Bulletproof");`
-
+```js
   module.exports = function (deployer) {
     deployer.deploy(Bulletproof);
   };
-
-uncomment the development network in your truffle-config.js
+```
+uncomment the development network in your `truffle-config.js`
 and modify the port number to 7545 to match
+```js
   development: {
     host: "127.0.0.1",     // Localhost (default: none)
     port: 7545,            // Standard Ethereum port (default: none)
     //port: 8545,            // ganache-cli default port
     network_id: "*",       // Any network (default: none)
   }
-
+```
 ### Start ganache gui
 Open ganache gui or type
 `ganache-cli`
@@ -185,13 +187,14 @@ MNEMONIC="YOUR SECRET KEY"
 INFURA_API_KEY="YOUR INFURA_API_KEY"
 
 ### At the top of truffle-config.js, add this code to populate from .env
+```js
   require('dotenv').config();
   const mnemonic = process.env["MNEMONIC"];
   const metamask_mnemonic = process.env["METAMASK_MNENONIC"];
   const infuraApiKey = process.env["INFURA_API_KEY"];
 
   const HDWalletProvider = require('@truffle/hdwallet-provider');
-
+```
 ## Deploy contracts to testnet
 ### `truffle migrate --network goerli`
 ### `truffle migrate --network ropsten`
