@@ -1,4 +1,4 @@
-# Bulletproof Productiona NFT Site Setup
+# Bulletproof Productions NFT Site Setup
 [ Bulletproof Productions ](https://bulletproof.ltd)
 
 <img src="https://bulletproof.ltd/static/media/transparent-logo.5f2cc35b6dd1cca4beb4b902fff5ea98.svg" alt="Bulletproof Productions Logo" style="height: 300px; width:300px;"/>
