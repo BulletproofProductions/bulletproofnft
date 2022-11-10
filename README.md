@@ -58,9 +58,11 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 
 ## Q3 2023
 
+### DEPLOY MULTI-CHAIN PHASE 1 — OPTIMISM
 ### Exclusive locked content offerings by artists, creators
 
 ## Q4 2023
 
+### DEPLOY MULTI-CHAIN PHASE 2 —POLYGON
 ### Implement NFT ordering system
 
