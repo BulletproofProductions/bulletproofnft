@@ -1,0 +1,39 @@
+{
+  "name": "bulletproof-productions-smart-contract",
+  "version": "0.8.5",
+  "private": true,
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired --openssl-legacy-provider start",
+    "http": "react-scripts start",
+    "buildx": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "truffle": "^5.6.6",
+    "ganache": "^7.5.0",
+    "dotenv": "^16.0.3",
+    "@truffle/hdwallet-provider": "^2.1.1"
+  }
+}
