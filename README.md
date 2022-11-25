@@ -40,13 +40,21 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 
 # Bulletproof Productions Roadmap
 
+## Q4 2022
+### Completed — Audio NFT creation platform for artists and creators
+### Completed — Audio NFT Royalties for artists and creators
+### Completed — Audio NFT Fundraising Platform
+### Completed — Audio NFT Player
+### Completed — Audio NFT Sharing Platform
+
+
 ## Q1 2023
 
 ### Messaging for users (fans, artists, creators) with their wallet address
 
 ### Create NFT marketplace
 
-### Completed - Allow minting functionality on mobile devices
+### Completed — Allow minting functionality on mobile devices
 
 ## Q2 2023
 
@@ -59,7 +67,7 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 ## Q3 2023
 
 ### DEPLOY MULTI-CHAIN PHASE 1 — OPTIMISM
-### Exclusive locked content offerings by artists, creators
+### Completed —  Exclusive locked content offerings by artists, creators
 
 ## Q4 2023
 
