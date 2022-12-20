@@ -50,7 +50,7 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 
 ## Q1 2023
 
-### Messaging for users (fans, artists, creators) with their wallet address
+### Completed — Messaging for users (fans, artists, creators) with their wallet address
 
 ### Create NFT marketplace
 
