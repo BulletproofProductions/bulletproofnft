@@ -72,6 +72,10 @@ contract BulletproofMultiNFTGenesis is
     event LogMint(address _address, uint256 _id);
     event RoyaltiesClaimed(address _address, uint256 _amount);
 
+    /**
+     * @dev     Contract constructor
+     * @param   _uri for nft base uri containing default track.
+     */
     constructor(string memory _uri) ERC1155(_uri) {
         name = "Billetproof Productions";
         symbol = "BP";
@@ -80,6 +84,14 @@ contract BulletproofMultiNFTGenesis is
         sharePerMint = 50; //percent
         _outstandingRoyalties = 0;
         _setDefaultRoyalty(msg.sender, (100 * sharePerMint)); //basis points
+    }
+
+    /**
+     * @dev     Getter for contract address
+     * @return  contract address.
+     */
+    function contractAddress() public view returns (address) {
+        return address(this);
     }
 
     /**
@@ -406,34 +418,40 @@ contract BulletproofMultiNFTGenesis is
         string memory toknURI,
         uint256 amount,
         uint256 trackId,
-        uint256 nftType
+        uint256 nftType,
+        bool hasLockedContent
     ) public payable virtual nonReentrant returns (uint256) {
+        uint256 _mintPrice = mintPrice;
+        if (hasLockedContent) {
+            _mintPrice = lockedContentTrackMintPrice;
+        }
         amount = 1;
         if (msg.sender == address(0)) revert InvalidAddress();
 
         if (msg.sender != owner()) {
-            require(msg.value >= (mintPrice * amount), "Insufficient funds");
+            require(msg.value >= (_mintPrice * amount), "Insufficient funds");
         }
         uint256 newId = tokenIds.current();
         bytes memory data;
 
         _setTokenURI(newId, toknURI);
-        _setTokenOwner(newId, msg.sender);
+        _setTokenOwner(newId, recipient);
         _setTokenType(newId, nftType);
 
         if (exists(trackId) && trackId != newId) {
             //add to owner balance
             //check if they are re-minting one of their own tracks
-            //only pay if they are minting someone elses track
+            //only pay if they are minting someone elses track and
+            //they are minting it to their own wallet
             if (msg.sender != tokenOwners[trackId]) {
                 addressBalances[tokenOwners[trackId]] += _calcPayment(
-                    mintPrice * amount
+                    _mintPrice * amount
                 );
                 //increase trackId usage
                 uint256 timesUsed = timesTrackUsed[trackId];
                 timesTrackUsed[trackId] = timesUsed + 1;
                 //add to total royalties
-                _outstandingRoyalties += _calcPayment(mintPrice * amount);
+                _outstandingRoyalties += _calcPayment(_mintPrice * amount);
                 //royalty
                 _setTokenRoyalty(
                     newId,
