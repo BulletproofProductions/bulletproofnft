@@ -66,11 +66,28 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 
 ## Q3 2023
 
-### DEPLOY MULTI-CHAIN PHASE 1 — OPTIMISM
+### Completed —DEPLOY MULTI-CHAIN PHASE 1 — OPTIMISM
 ### Completed —  Exclusive locked content offerings by artists, creators
 
 ## Q4 2023
 
-### DEPLOY MULTI-CHAIN PHASE 2 —POLYGON
-### Implement NFT ordering system
+### Completed —DEPLOY MULTI-CHAIN PHASE 2 —POLYGON
+### Completed —DEPLOY MULTI-CHAIN PHASE 3 —BASE
+### Completed —DEPLOY MULTI-CHAIN PHASE 4 —SCROLL
+### Completed —DEPLOY MULTI-CHAIN PHASE 5 —ARBITRUM
+### Completed — Implement NFT ordering system
+
+## Q1 2024
+
+### Completed —DEPLOY VIDEO NFTS
+### DEPLOY MULTITRACK AUDIO NFTs
+### Earn Royalties from Metaverse use of Audio NFTs
+### Integrate with Spotify to enable streaming Royalties integration
+### Integrate with Audius
+
+## Q122024
+
+### Integrate with DistroKid and or APRA for track copyright and royalties
+### Enable Rent-to-Own Audio NFTs
+### 
 
