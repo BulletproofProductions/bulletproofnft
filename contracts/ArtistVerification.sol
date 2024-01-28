@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.16;
+pragma solidity 0.8.18;
 
 /// @title Artist / creator verification and preferences used by Bulletproof Productions.
 /// @author @BulletproofProductions
@@ -37,12 +37,9 @@ contract ArtistVerification {
      * @param   _userAddress users wallet address.
      * @return  User struct.
      */
-    function getUser(address _userAddress)
-        public
-        view
-        virtual
-        returns (User memory)
-    {
+    function getUser(
+        address _userAddress
+    ) public view virtual returns (User memory) {
         require(users[_userAddress].verified == true, "User Not Verified");
         return users[_userAddress];
     }
@@ -63,12 +60,9 @@ contract ArtistVerification {
      * @param   _userAddress users wallet address.
      * @return  users verification status boolean.
      */
-    function isUserVerified(address _userAddress)
-        public
-        view
-        virtual
-        returns (bool)
-    {
+    function isUserVerified(
+        address _userAddress
+    ) public view virtual returns (bool) {
         bool verified = false;
         verified = users[_userAddress].verified;
         return verified;
@@ -89,12 +83,9 @@ contract ArtistVerification {
      * @param   _userAddress users wallet address.
      * @return  users IPFS settings URL.
      */
-    function getUserSettingsIPFSURL(address _userAddress)
-        public
-        view
-        virtual
-        returns (string memory)
-    {
+    function getUserSettingsIPFSURL(
+        address _userAddress
+    ) public view virtual returns (string memory) {
         require(users[_userAddress].verified == true, "User Not Verified");
         return users[_userAddress].settingsIPFSURL;
     }
