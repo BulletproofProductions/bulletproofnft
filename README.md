@@ -1,7 +1,7 @@
 # Bulletproof Productions NFT Site Setup
 [ Bulletproof Productions ](https://bulletproof.ltd)
 
-<img src="https://bulletproof.ltd/static/media/transparent-logo.5f2cc35b6dd1cca4beb4b902fff5ea98.svg" alt="Bulletproof Productions Logo" style="height: 300px; width:300px;"/>
+<img src="https://bulletproof.ltd/images/logo-512x512.png" alt="Bulletproof Productions Logo" style="height: 300px; width:300px;"/>
 
 # What is Bulletproof Productions mission?
 
@@ -85,7 +85,7 @@ Once you sell your Music NFT you can no longer claim royalties from it.
 ### Integrate with Spotify to enable streaming Royalties integration
 ### Integrate with Audius
 
-## Q122024
+## Q2 2024
 
 ### Integrate with DistroKid and or APRA for track copyright and royalties
 ### Enable Rent-to-Own Audio NFTs
